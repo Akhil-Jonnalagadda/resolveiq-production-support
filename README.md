@@ -177,6 +177,7 @@ Logs:     ERROR POST /api/payments/charge 504
           Stripe webhook timeout after 30000ms
           Connection pool exhausted: max_connections=10
 ```
+```
 ### Sample Incident Case 2
 
 **Title:** User Authentication Failures After Identity Provider Update
