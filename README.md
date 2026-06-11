@@ -177,6 +177,29 @@ Logs:     ERROR POST /api/payments/charge 504
           Stripe webhook timeout after 30000ms
           Connection pool exhausted: max_connections=10
 ```
+### Sample Incident Case 2
+
+**Title:** User Authentication Failures After Identity Provider Update
+
+| Field        | Value                  |
+| ------------ | ---------------------- |
+| **Customer** | Northstar Financial    |
+| **Service**  | Authentication Service |
+| **Priority** | Critical               |
+
+**Issue**
+
+Users report they cannot log in after a scheduled identity provider update. Login attempts fail immediately with an authentication error. Affected users include both web and mobile clients.
+
+**Logs**
+
+```text
+ERROR POST /api/auth/login 401 Unauthorized
+JWT validation failed: invalid signature
+OIDC token issuer mismatch: expected=https://login.northstar.com
+Connection to identity provider reset after 15000ms
+```
+
 
 The case will auto-analyze in a few seconds. Review the output, approve, resolve with a fix description, and the resolution is auto-indexed for future similar-case lookup.
 
